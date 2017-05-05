@@ -1,0 +1,7 @@
+/**
+ * gulp - 追忆那远去的游侠气息
+ * @version v0.0.1
+ * @link http://www.wheats.me
+ * @license 随便用
+ */
+!function n(t,e,r){function o(u,f){if(!e[u]){if(!t[u]){var a="function"==typeof require&&require;if(!f&&a)return a(u,!0);if(i)return i(u,!0);var c=new Error("Cannot find module '"+u+"'");throw c.code="MODULE_NOT_FOUND",c}var l=e[u]={exports:{}};t[u][0].call(l.exports,function(n){var e=t[u][1][n];return o(e||n)},l,l.exports,n,t,e,r)}return e[u].exports}for(var i="function"==typeof require&&require,u=0;u<r.length;u++)o(r[u]);return o}({1:[function(n,t,e){"use strict";function r(n,t){if(!(n instanceof t))throw new TypeError("Cannot call a class as a function")}var o=function(){function n(n,t){for(var e=0;e<t.length;e++){var r=t[e];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(n,r.key,r)}}return function(t,e,r){return e&&n(t.prototype,e),r&&n(t,r),t}}(),i=function(){function n(t,e){r(this,n),this.x=t,this.y=e}return o(n,[{key:"toString",value:function(){return"("+this.x+", "+this.y+")"}},{key:"mm",value:function(){}}]),n}();Object.assign(i.prototype,{info:function(){console.log("this is info")},toValue:function(){console.log("this is toValue")}});var u=new i(5,6);console.log(u),u.info(),u.toValue()},{}]},{},[1]);
