@@ -4,4 +4,4 @@
  * @link http://www.wheats.me
  * @license 随便用
  */
-body,html{background:#fff}p{background:red}
+body,html{background:#fff;display:-webkit-flex;display:-ms-flexbox;display:flex}p{background:red}
