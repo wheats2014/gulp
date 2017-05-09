@@ -25,6 +25,12 @@ let banner = [
 
 gulp.task('js-uglify', () => {
   return gulp.src('static/javascripts/src/**/*.js')
+      .pipe(babel({
+        plugins : [
+          "transform-regenerator",
+          'transform-runtime'
+        ]
+      })) // regeneratorRuntime undefined
       .pipe(gulpBrowser.browserify(
           [ {transform : "babelify", options : {presets : [ "es2015" ]}} ]))
       .pipe(uglify())
@@ -57,4 +63,4 @@ gulp.task('css-minify', () => {
 //           () => { gulp.watch('static/css/src/**/*.css', [ 'css-minify' ]);
 //           });
 
-gulp.task('default', [ 'less', 'css-minify' ]);
+gulp.task('default', [ 'less', 'css-minify', 'js-uglify' ]);
