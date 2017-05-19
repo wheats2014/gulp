@@ -4,6 +4,7 @@ const gulpBrowser = require("gulp-browser");
 const header = require('gulp-header');
 const uglify = require('gulp-uglify');
 const less = require('gulp-less');
+var sass = require('gulp-sass');
 
 // 添加浏览器前缀
 const autoprefixer = require('gulp-autoprefixer');
@@ -43,6 +44,12 @@ gulp.task('less', () => {
   return gulp.src('static/less/**/*.less')
       .pipe(less())
       .pipe(gulp.dest('static/css/src'));
+});
+
+gulp.task('sass', () => {
+    return gulp.src('static/sass/**/*.scss')
+        .pipe(sass({outputStyle: 'expanded'}))
+        .pipe(gulp.dest('static/css/src'));
 });
 
 gulp.task('css-minify', () => {

@@ -1,0 +1,1 @@
+var xiaomai = 20;

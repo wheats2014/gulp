@@ -1,0 +1,88 @@
+.test1 {
+  content: unquote("hello world")
+}
+@for $i from 1 through 3 {
+  .item-#{$i}{width:2em * $i}
+}
+
+@for $i from 1 to 3 {
+  .item1-#{$i} {width:2em * $i}
+}
+
+@mixin blockOrHidden($boolean:true) {
+  @if $boolean {
+    display: block;
+  }
+  @else {
+    display: none;
+  }
+}
+
+.block {
+  @include blockOrHidden;
+}
+.hidden {
+  @include blockOrHidden(false);
+}
+
+@mixin border-radius($radius:5px) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.button {
+  @include border-radius(10px);
+  border: 1px solid #ff0000;
+  position: sticky;
+  top: 20px;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content:"";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+
+.box {
+  border:{
+    top:1px solid red;
+    bottom:1px solid green;
+  }
+}
+
+
+$baseLineHeight:2;
+$baseLineHeight: 1.5 !default;
+
+
+$font-stack: Helvetica, sans-serif;
+$primary-color:#333;
+
+body{
+  font: 100% $font-stack;
+  color:$primary-color;
+  line-height: $baseLineHeight;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
